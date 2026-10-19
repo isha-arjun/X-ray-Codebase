@@ -28,16 +28,6 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`. Any simple static server works; no install step is required.
 
-## Publish on GitHub Pages
-
-1. Create a GitHub repository, for example `codebase-x-ray`.
-2. Put the contents of this project at the repository root, including `index.html` and the `js/` directory.
-3. Commit and push to the default branch.
-4. In **Settings → Pages**, choose **Deploy from a branch**, select the default branch and `/(root)`, then save.
-5. Open the Pages URL shown in Settings → Pages. Relative paths are used for CSS and modules, so this works from a project-site subpath.
-
-GitHub Actions checks required files, JavaScript syntax, and scanner tests without installing third-party packages.
-
 ## Supported analysis and limits
 
 - **JavaScript-like files** (`.js`, `.mjs`, `.cjs`, `.jsx`, `.ts`, `.tsx`): conservative pattern matching for static `import`, `export … from`, literal dynamic `import()`, and literal `require()`. This is not a full JavaScript parser; comments, aliases, template strings, and complex syntax can cause misses or false positives.
